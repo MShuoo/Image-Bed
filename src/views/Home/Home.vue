@@ -54,10 +54,10 @@ const UploadConfig = ref<any>({
   MaxSize: 15, //单个文件大小限制，单位：MB
 });
 // 上传列表
-const fileList = ref<Array<any>>(JSON.parse(localStorage.getItem('zychUpImageList') || '[]'));
+const fileList = ref<Array<any>>(JSON.parse(localStorage.getItem('MyUpImageList') || '[]'));
 watch(fileList, (newVal) => {
   localStorage.setItem(
-    'zychUpImageList',
+    'MyUpImageList',
     JSON.stringify(
       newVal
         .filter((i: any) => i.upload_status == 'success')
